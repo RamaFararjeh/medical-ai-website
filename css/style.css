@@ -1,0 +1,142 @@
+:root {
+    --main-color: #133b4b;
+    --blue-color: #133b4b;
+    --white-color: #ffffff;
+    --black-color: #2E2E2E;
+    --gray-Color: #B0B3B8;
+    --footer-color: #E6F8FF;
+}
+
+/* 
+================================
+            Admin
+================================
+
+*/
+
+/* ✅ الهيدر */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .hamburger {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.header .right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.logout {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ✅ السايدبار */
+#sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 70px);
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar .logo {
+    text-align: center;
+}
+
+.sidebar .logo img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 10px;
+    color: #005A9C;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.sidebar nav a:hover {
+    background: #f1f1f1;
+}
+
+/* ✅ المحتوى */
+.main-content {
+    margin-top: 70px;
+    margin-left: 240px;
+    padding: 30px;
+    transition: margin-left 0.3s ease;
+}
+
+/* ✅ عند إغلاق السايدبار */
+body.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: 0;
+}
+
+/* ✅ موبايل */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    body.sidebar-collapsed .sidebar {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
+
+
+
